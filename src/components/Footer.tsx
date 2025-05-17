@@ -31,7 +31,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentSection }) => {
           </Button>
           
           <Button 
-            variant="primary"
+            variant="default"
             onClick={() => setCurrentSection('questions')} 
             className="flex items-center justify-center bg-primary text-white rounded-full w-14 h-14 -mt-5 shadow-md hover:bg-primary/90"
           >
