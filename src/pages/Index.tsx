@@ -8,6 +8,8 @@ import LevelSelection from "@/components/LevelSelection";
 import SubjectSelection from "@/components/SubjectSelection";
 import QuestionDisplay from "@/components/QuestionDisplay";
 import Footer from "@/components/Footer";
+import Dashboard from "@/components/Dashboard";
+import ChatBot from "@/components/ChatBot";
 
 const Index = () => {
   const [currentSection, setCurrentSection] = useState('welcome');
@@ -34,10 +36,11 @@ const Index = () => {
   };
   
   const handleQuestionAnswered = () => {
-    // For demo purposes, we'll just show another question
-    // In a real app, this would load the next question or show results
-    console.log('Answered question, would load next question here');
     setCurrentSection('dashboard');
+  };
+  
+  const handleStartPractice = () => {
+    setCurrentSection('questions');
   };
   
   // Determine if footer should be shown
@@ -79,13 +82,11 @@ const Index = () => {
         )}
         
         {currentSection === 'dashboard' && (
-          <div className="container mx-auto py-16 px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Welcome to Your Dashboard</h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Your learning journey is just beginning! 
-              Click the AI Bot button below to start practicing.
-            </p>
-          </div>
+          <Dashboard onStartPractice={handleStartPractice} />
+        )}
+        
+        {currentSection === 'chatbot' && (
+          <ChatBot />
         )}
         
         {currentSection === 'rewards' && (

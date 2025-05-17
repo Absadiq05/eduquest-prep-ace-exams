@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Home, Award, MessageCircle } from 'lucide-react';
+import { Home, Award, MessageCircle, Bot } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 interface FooterProps {
@@ -9,7 +9,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ setCurrentSection }) => {
   return (
-    <footer className="bg-white border-t fixed bottom-0 left-0 right-0">
+    <footer className="bg-white border-t fixed bottom-0 left-0 right-0 z-10">
       <div className="container mx-auto">
         <nav className="flex justify-around items-center py-2">
           <Button 
@@ -35,7 +35,16 @@ const Footer: React.FC<FooterProps> = ({ setCurrentSection }) => {
             onClick={() => setCurrentSection('questions')} 
             className="flex items-center justify-center bg-primary text-white rounded-full w-14 h-14 -mt-5 shadow-md hover:bg-primary/90"
           >
-            <MessageCircle className="h-6 w-6" />
+            <Bot className="h-6 w-6" />
+          </Button>
+
+          <Button 
+            variant="ghost" 
+            onClick={() => setCurrentSection('chatbot')} 
+            className="flex flex-col items-center gap-1"
+          >
+            <MessageCircle className="h-5 w-5" />
+            <span className="text-xs">EDUQUESTbot</span>
           </Button>
         </nav>
       </div>
