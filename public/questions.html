@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Questions - EDUQUEST</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Header -->
+      <header class="bg-primary text-white p-4 shadow-md">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+          <h1 class="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer" id="logo">
+            EDUQUEST
+          </h1>
+          
+          <nav class="mt-4 md:mt-0">
+            <ul class="flex gap-4 md:gap-6 flex-wrap justify-center">
+              <li>
+                <button class="nav-btn text-white hover-bg-primary-light" data-page="dashboard">
+                  Dashboard
+                </button>
+              </li>
+              <li>
+                <button class="nav-btn text-white hover-bg-primary-light" data-page="rewards">
+                  Coin Rewards
+                </button>
+              </li>
+              <li>
+                <button class="nav-btn text-white hover-bg-primary-light" data-page="support">
+                  Support
+                </button>
+              </li>
+              <li>
+                <button class="nav-btn text-white hover-bg-primary-light" id="signout-btn">
+                  Sign Out
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+      <main>
+        <section class="py-8 px-4 animate-fade-in">
+          <div class="container mx-auto max-w-3xl">
+            <div class="card shadow-lg">
+              <div class="card-header border-b bg-muted-light">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    <h2 class="text-xl font-medium">JAMB History & Government Question</h2>
+                  </div>
+                  <button 
+                    class="btn border flex items-center gap-2"
+                    id="ai-help-btn"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Ask EDUQUESTbot
+                  </button>
+                </div>
+              </div>
+              
+              <div class="card-content pt-6">
+                <div class="mb-8">
+                  <h3 class="text-lg font-medium mb-4" id="question-text">
+                    Which of the following is NOT a major feature of the Nigerian colonial economy up to 1945?
+                  </h3>
+                  
+                  <div class="space-y-3">
+                    <div 
+                      class="option flex items-start p-3 border rounded-md cursor-pointer hover-bg-primary-light"
+                      data-option="A"
+                    >
+                      <div class="flex justify-center items-center w-8 h-8 rounded-full mr-3 border border-gray-300">
+                        A
+                      </div>
+                      <span class="pt-1">Predominance of import-export trade</span>
+                    </div>
+                    
+                    <div 
+                      class="option flex items-start p-3 border rounded-md cursor-pointer hover-bg-primary-light"
+                      data-option="B"
+                    >
+                      <div class="flex justify-center items-center w-8 h-8 rounded-full mr-3 border border-gray-300">
+                        B
+                      </div>
+                      <span class="pt-1">Major economic activities in the hands of foreign companies</span>
+                    </div>
+                    
+                    <div 
+                      class="option flex items-start p-3 border rounded-md cursor-pointer hover-bg-primary-light"
+                      data-option="C"
+                    >
+                      <div class="flex justify-center items-center w-8 h-8 rounded-full mr-3 border border-gray-300">
+                        C
+                      </div>
+                      <span class="pt-1">Development of manufacturing industries</span>
+                    </div>
+                    
+                    <div 
+                      class="option flex items-start p-3 border rounded-md cursor-pointer hover-bg-primary-light"
+                      data-option="D"
+                    >
+                      <div class="flex justify-center items-center w-8 h-8 rounded-full mr-3 border border-gray-300">
+                        D
+                      </div>
+                      <span class="pt-1">Focus on production of raw materials</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Explanation (initially hidden) -->
+                <div id="explanation" class="bg-blue-50 border border-blue-200 rounded-md p-4 mb-4 hidden">
+                  <div class="flex items-start">
+                    <div class="mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-blue-800 mb-1">Explanation</h4>
+                      <p class="text-blue-800" id="explanation-text">
+                        The Nigerian colonial economy up to 1945 was characterized by import-export trade, foreign company dominance, and raw material production. There was minimal development of manufacturing industries, as the colonial policy focused on making Nigeria a producer of raw materials and a consumer of imported manufactured goods.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- AI Help (initially hidden) -->
+                <div id="ai-help" class="border rounded-md p-4 mb-4 bg-purple-50 border-primary hidden">
+                  <div class="flex items-start">
+                    <div class="bg-primary text-white p-2 rounded-full mr-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-gray-900 mb-1">EDUQUESTbot</h4>
+                      <p class="text-gray-800">
+                        This question is testing your knowledge of Nigeria's economic history during the colonial period. 
+                        Remember that colonial economies were typically structured to benefit the colonizing power, 
+                        with an emphasis on raw material production rather than industrialization or manufacturing.
+                        Think about which option would be counter to the typical colonial economic model.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card-footer flex justify-between border-t py-4">
+                <button 
+                  id="submit-btn" 
+                  class="btn btn-primary w-full" 
+                  disabled
+                >
+                  Submit Answer
+                </button>
+                <button 
+                  id="next-btn" 
+                  class="btn btn-primary w-full hidden"
+                >
+                  Next Question
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <!-- Footer -->
+      <footer class="bg-white border-t fixed bottom-0 left-0 right-0 z-10">
+        <div class="container mx-auto">
+          <nav class="flex justify-around items-center py-2">
+            <button class="footer-btn flex flex-col items-center gap-1" data-page="dashboard">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span class="text-xs">Home</span>
+            </button>
+            
+            <button class="footer-btn flex flex-col items-center gap-1" data-page="rewards">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.21 13.89 7 23l9-9-8.99-8.99-1.07 1.07 7.73 7.73L8.21 13.89z"/><path d="m7 6.08 8.99 8.99c-3.34.06-6.24-2.46-7.99-5.99"/></svg>
+              <span class="text-xs">Rewards</span>
+            </button>
+            
+            <button 
+              class="primary-btn flex items-center justify-center bg-primary text-white rounded-full w-14 h-14 -mt-5 shadow-md hover-bg-primary-dark"
+              data-page="questions"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9v4.5a.5.5 0 0 0 .5.5H13"/><path d="M9 12h3"/></svg>
+            </button>
+
+            <button class="footer-btn flex flex-col items-center gap-1" data-page="chatbot">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span class="text-xs">EDUQUESTbot</span>
+            </button>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const logo = document.getElementById('logo');
+        const options = document.querySelectorAll('.option');
+        const submitBtn = document.getElementById('submit-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const explanation = document.getElementById('explanation');
+        const aiHelpBtn = document.getElementById('ai-help-btn');
+        const aiHelp = document.getElementById('ai-help');
+        const navBtns = document.querySelectorAll('.nav-btn');
+        const footerBtns = document.querySelectorAll('.footer-btn, .primary-btn');
+        const signoutBtn = document.getElementById('signout-btn');
+        
+        // Question data
+        const questionData = {
+          correctAnswer: "C",
+          explanation: "The Nigerian colonial economy up to 1945 was characterized by import-export trade, foreign company dominance, and raw material production. There was minimal development of manufacturing industries, as the colonial policy focused on making Nigeria a producer of raw materials and a consumer of imported manufactured goods."
+        };
+        
+        let selectedAnswer = null;
+        
+        // Navigation
+        if (logo) {
+          logo.addEventListener('click', () => {
+            window.location.href = 'index.html';
+          });
+        }
+        
+        // Handle option selection
+        options.forEach(option => {
+          option.addEventListener('click', () => {
+            // Only allow selection if not already answered
+            if (submitBtn.classList.contains('hidden')) return;
+            
+            // Reset all options
+            options.forEach(opt => {
+              const circle = opt.querySelector('div');
+              circle.classList.remove('bg-primary', 'text-white', 'border-primary');
+              circle.classList.add('border-gray-300');
+              opt.classList.remove('bg-primary-light', 'border-primary');
+            });
+            
+            // Set selected option
+            const circle = option.querySelector('div');
+            circle.classList.add('bg-primary', 'text-white', 'border-primary');
+            circle.classList.remove('border-gray-300');
+            option.classList.add('bg-primary-light', 'border-primary');
+            
+            selectedAnswer = option.getAttribute('data-option');
+            
+            // Enable submit button
+            submitBtn.disabled = false;
+          });
+        });
+        
+        // Submit answer
+        if (submitBtn) {
+          submitBtn.addEventListener('click', () => {
+            if (!selectedAnswer) return;
+            
+            // Show explanation
+            explanation.classList.remove('hidden');
+            
+            // Mark correct and wrong answers
+            options.forEach(option => {
+              const optionLetter = option.getAttribute('data-option');
+              const circle = option.querySelector('div');
+              
+              if (optionLetter === questionData.correctAnswer) {
+                option.classList.add('bg-green-50', 'border-green-500');
+                circle.classList.add('bg-green-500', 'text-white', 'border-green-500');
+                circle.classList.remove('bg-primary', 'border-primary', 'border-gray-300');
+                
+                // Show check mark for correct answer
+                circle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+              } else if (optionLetter === selectedAnswer) {
+                option.classList.add('bg-red-50', 'border-red-500');
+                circle.classList.add('bg-red-500', 'text-white', 'border-red-500');
+                circle.classList.remove('bg-primary', 'border-primary', 'border-gray-300');
+                
+                // Show X mark for wrong selected answer
+                circle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+              }
+            });
+            
+            // Hide submit button and show next button
+            submitBtn.classList.add('hidden');
+            nextBtn.classList.remove('hidden');
+          });
+        }
+        
+        // Next question
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            // In a real app, load the next question
+            // For demo, redirect to dashboard
+            window.location.href = 'dashboard.html';
+          });
+        }
+        
+        // Toggle AI help
+        if (aiHelpBtn) {
+          aiHelpBtn.addEventListener('click', () => {
+            aiHelp.classList.toggle('hidden');
+          });
+        }
+        
+        // Handle navigation
+        navBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const page = this.getAttribute('data-page');
+            if (page) {
+              window.location.href = `${page}.html`;
+            }
+          });
+        });
+        
+        // Handle footer navigation
+        footerBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const page = this.getAttribute('data-page');
+            if (page) {
+              window.location.href = `${page}.html`;
+            }
+          });
+        });
+        
+        // Handle sign out
+        if (signoutBtn) {
+          signoutBtn.addEventListener('click', () => {
+            window.location.href = 'index.html';
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

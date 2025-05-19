@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - EDUQUEST</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Header -->
+      <header class="bg-primary text-white p-4 shadow-md">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+          <h1 class="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer" id="logo">
+            EDUQUEST
+          </h1>
+          
+          <nav class="mt-4 md:mt-0">
+            <ul class="flex gap-4 md:gap-6 flex-wrap justify-center">
+              <li>
+                <button class="nav-btn text-white hover-bg-primary-light" data-page="dashboard">
+                  Dashboard
+                </button>
+              </li>
+              <li>
+                <button class="nav-btn text-white hover-bg-primary-light" data-page="rewards">
+                  Coin Rewards
+                </button>
+              </li>
+              <li>
+                <button class="nav-btn text-white hover-bg-primary-light" data-page="support">
+                  Support
+                </button>
+              </li>
+              <li>
+                <button class="nav-btn text-white hover-bg-primary-light" id="signout-btn">
+                  Sign Out
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+      <main>
+        <section class="py-8 px-4 animate-fade-in">
+          <div class="container mx-auto">
+            <!-- Welcome Card -->
+            <div class="mb-8">
+              <div class="card bg-gradient-to-r from-primary-light to-secondary border-none shadow-md">
+                <div class="card-content p-6">
+                  <div class="flex flex-col md:flex-row md:items-center justify-between">
+                    <div>
+                      <h2 class="text-2xl md:text-3xl font-bold mb-2">Welcome back, Student!</h2>
+                      <p class="text-gray-600 mb-4">Ready to continue your JAMB & Post-UTME preparation journey?</p>
+                      <button id="start-practicing-btn" class="btn btn-primary gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        Start Practicing
+                      </button>
+                    </div>
+                    <div class="hidden md:block">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-primary opacity-50" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stats & Progress -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div class="card">
+                <div class="card-header flex flex-row items-center justify-between pb-2">
+                  <div class="space-y-1">
+                    <h3 class="text-sm font-medium">Questions Attempted</h3>
+                    <p class="text-xs text-gray-600">Your progress</p>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <div class="card-content">
+                  <div class="text-2xl font-bold">42/500</div>
+                  <div class="w-full h-2 bg-secondary rounded-full mt-3">
+                    <div class="h-2 bg-primary rounded-full" style="width: 8%"></div>
+                  </div>
+                  <p class="text-xs text-gray-600 mt-2">8% complete</p>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="card-header flex flex-row items-center justify-between pb-2">
+                  <div class="space-y-1">
+                    <h3 class="text-sm font-medium">Current Score</h3>
+                    <p class="text-xs text-gray-600">Your performance</p>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.21 13.89 7 23l9-9-8.99-8.99-1.07 1.07 7.73 7.73L8.21 13.89z"/><path d="m7 6.08 8.99 8.99c-3.34.06-6.24-2.46-7.99-5.99"/></svg>
+                </div>
+                <div class="card-content">
+                  <div class="text-2xl font-bold">78%</div>
+                  <div class="w-full h-2 bg-secondary rounded-full mt-3">
+                    <div class="h-2 bg-green-500 rounded-full" style="width: 78%"></div>
+                  </div>
+                  <p class="text-xs text-green-600 mt-2">Good progress! Keep it up!</p>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="card-header flex flex-row items-center justify-between pb-2">
+                  <div class="space-y-1">
+                    <h3 class="text-sm font-medium">Days to JAMB</h3>
+                    <p class="text-xs text-gray-600">Countdown</p>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div class="card-content">
+                  <div class="text-2xl font-bold">45 days</div>
+                  <div class="text-xs text-gray-600 mt-2">Exam Date: June 30, 2025</div>
+                  <button class="btn btn-link text-primary p-0 h-auto mt-1 text-xs">
+                    View JAMB schedule
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Recommended actions -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="flex items-center card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    Recommended Study Topics
+                  </h3>
+                  <p class="card-description">Based on your performance</p>
+                </div>
+                <div class="card-content">
+                  <ul class="space-y-3">
+                    <li class="flex items-center justify-between p-2 border rounded hover-bg-primary-light cursor-pointer">
+                      <span>Nigerian History (Colonial Period)</span>
+                      <span class="text-sm text-red-500 font-medium">45%</span>
+                    </li>
+                    <li class="flex items-center justify-between p-2 border rounded hover-bg-primary-light cursor-pointer">
+                      <span>Chemical Bonding</span>
+                      <span class="text-sm text-red-500 font-medium">52%</span>
+                    </li>
+                    <li class="flex items-center justify-between p-2 border rounded hover-bg-primary-light cursor-pointer">
+                      <span>Algebraic Expressions</span>
+                      <span class="text-sm text-red-500 font-medium">63%</span>
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary w-full mt-4">View All Topics</button>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="flex items-center card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Upcoming Events
+                  </h3>
+                  <p class="card-description">Stay updated</p>
+                </div>
+                <div class="card-content">
+                  <ul class="space-y-3">
+                    <li class="flex items-center justify-between p-2 border rounded hover-bg-primary-light cursor-pointer">
+                      <span>JAMB Mock Exam</span>
+                      <span class="text-sm text-gray-600">May 15, 2025</span>
+                    </li>
+                    <li class="flex items-center justify-between p-2 border rounded hover-bg-primary-light cursor-pointer">
+                      <span>Chemistry Live Session</span>
+                      <span class="text-sm text-gray-600">May 2, 2025</span>
+                    </li>
+                    <li class="flex items-center justify-between p-2 border rounded hover-bg-primary-light cursor-pointer">
+                      <span>Registration Deadline</span>
+                      <span class="text-sm text-gray-600">April 30, 2025</span>
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary w-full mt-4">View Calendar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <!-- Footer -->
+      <footer class="bg-white border-t fixed bottom-0 left-0 right-0 z-10">
+        <div class="container mx-auto">
+          <nav class="flex justify-around items-center py-2">
+            <button class="footer-btn flex flex-col items-center gap-1" data-page="dashboard">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span class="text-xs">Home</span>
+            </button>
+            
+            <button class="footer-btn flex flex-col items-center gap-1" data-page="rewards">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.21 13.89 7 23l9-9-8.99-8.99-1.07 1.07 7.73 7.73L8.21 13.89z"/><path d="m7 6.08 8.99 8.99c-3.34.06-6.24-2.46-7.99-5.99"/></svg>
+              <span class="text-xs">Rewards</span>
+            </button>
+            
+            <button 
+              class="primary-btn flex items-center justify-center bg-primary text-white rounded-full w-14 h-14 -mt-5 shadow-md hover-bg-primary-dark"
+              data-page="questions"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9v4.5a.5.5 0 0 0 .5.5H13"/><path d="M9 12h3"/></svg>
+            </button>
+
+            <button class="footer-btn flex flex-col items-center gap-1" data-page="chatbot">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span class="text-xs">EDUQUESTbot</span>
+            </button>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const logo = document.getElementById('logo');
+        const startPracticingBtn = document.getElementById('start-practicing-btn');
+        const navBtns = document.querySelectorAll('.nav-btn');
+        const footerBtns = document.querySelectorAll('.footer-btn, .primary-btn');
+        const signoutBtn = document.getElementById('signout-btn');
+        
+        // Navigation
+        if (logo) {
+          logo.addEventListener('click', () => {
+            window.location.href = 'index.html';
+          });
+        }
+        
+        if (startPracticingBtn) {
+          startPracticingBtn.addEventListener('click', () => {
+            window.location.href = 'questions.html';
+          });
+        }
+        
+        // Handle navigation
+        navBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const page = this.getAttribute('data-page');
+            if (page) {
+              window.location.href = `${page}.html`;
+            }
+          });
+        });
+        
+        // Handle footer navigation
+        footerBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const page = this.getAttribute('data-page');
+            if (page) {
+              window.location.href = `${page}.html`;
+            }
+          });
+        });
+        
+        // Handle sign out
+        if (signoutBtn) {
+          signoutBtn.addEventListener('click', () => {
+            window.location.href = 'index.html';
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subject Selection - EDUQUEST</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Header -->
+      <header class="bg-primary text-white p-4 shadow-md">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+          <h1 class="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer" id="logo">
+            EDUQUEST
+          </h1>
+        </div>
+      </header>
+      
+      <main>
+        <section class="py-8 px-4 animate-fade-in">
+          <div class="container mx-auto max-w-2xl">
+            <div class="card">
+              <div class="card-header text-center">
+                <h2 class="card-title text-2xl">Welcome to EDUQUESTbot!</h2>
+                <p class="card-description text-lg">
+                  Select your preferred subject to start practicing
+                </p>
+              </div>
+              <div class="card-content">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="subject-grid">
+                  <button class="subject-btn h-16 hover-bg-primary-light" data-subject="Mathematics">Mathematics</button>
+                  <button class="subject-btn h-16 hover-bg-primary-light" data-subject="English Language">English Language</button>
+                  <button class="subject-btn h-16 hover-bg-primary-light" data-subject="Science">Science</button>
+                  <button class="subject-btn h-16 hover-bg-primary-light" data-subject="Social Studies">Social Studies</button>
+                  <button class="subject-btn h-16 hover-bg-primary-light" data-subject="Biology">Biology</button>
+                  <button class="subject-btn h-16 hover-bg-primary-light" data-subject="Chemistry">Chemistry</button>
+                  <button class="subject-btn h-16 hover-bg-primary-light" data-subject="Physics">Physics</button>
+                  <button class="subject-btn h-16 hover-bg-primary-light" data-subject="Government">Government</button>
+                  <button class="subject-btn h-16 hover-bg-primary-light" data-subject="Economics">Economics</button>
+                  <button class="subject-btn h-16 hover-bg-primary-light" data-subject="Literature">Literature</button>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button 
+                  id="continue-btn" 
+                  class="btn btn-primary w-full" 
+                  disabled
+                >
+                  Continue to Questions
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const logo = document.getElementById('logo');
+        const continueBtn = document.getElementById('continue-btn');
+        const subjectBtns = document.querySelectorAll('.subject-btn');
+        let selectedSubject = null;
+        
+        if (logo) {
+          logo.addEventListener('click', () => {
+            window.location.href = 'index.html';
+          });
+        }
+        
+        // Handle subject selection
+        subjectBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            // Reset all buttons
+            subjectBtns.forEach(b => {
+              b.classList.remove('bg-primary', 'text-white');
+              b.classList.add('hover-bg-primary-light');
+            });
+            
+            // Set selected button
+            btn.classList.remove('hover-bg-primary-light');
+            btn.classList.add('bg-primary', 'text-white');
+            
+            // Update selected subject
+            selectedSubject = btn.getAttribute('data-subject');
+            console.log('Selected Subject:', selectedSubject);
+            
+            // Enable continue button
+            continueBtn.disabled = false;
+          });
+        });
+        
+        if (continueBtn) {
+          continueBtn.addEventListener('click', () => {
+            if (selectedSubject) {
+              // Store selected subject (could use localStorage in a real app)
+              console.log('Continuing with subject:', selectedSubject);
+              
+              // Redirect to questions page
+              window.location.href = 'questions.html';
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

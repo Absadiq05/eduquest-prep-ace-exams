@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDUQUEST - Learn and Conquer!</title>
+    <meta name="description" content="Prepare for WAEC, NECO, and Post-UTME with interactive quizzes and practice questions." />
+    <meta name="author" content="EDUQUEST" />
+
+    <meta property="og:title" content="EDUQUEST - Learn and Conquer!" />
+    <meta property="og:description" content="Prepare for WAEC, NECO, and Post-UTME with interactive quizzes and practice questions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@eduquest" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Header -->
+      <header class="bg-primary text-white p-4 shadow-md">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+          <h1 class="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer" id="logo">
+            EDUQUEST
+          </h1>
+          
+          <nav class="mt-4 md:mt-0 hidden" id="main-nav">
+            <ul class="flex gap-4 md:gap-6 flex-wrap justify-center">
+              <li>
+                <button class="nav-btn text-white hover-bg-primary-light">
+                  Dashboard
+                </button>
+              </li>
+              <li>
+                <button class="nav-btn text-white hover-bg-primary-light">
+                  Coin Rewards
+                </button>
+              </li>
+              <li>
+                <button class="nav-btn text-white hover-bg-primary-light">
+                  Support
+                </button>
+              </li>
+              <li>
+                <button class="nav-btn text-white hover-bg-primary-light" id="signout-btn">
+                  Sign Out
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+      <main>
+        <!-- Hero Section - visible by default -->
+        <section id="welcome-section" class="py-8 px-4 md:py-16 animate-fade-in bg-gradient-to-br from-white to-purple-50">
+          <div class="container mx-auto max-w-6xl">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="flex flex-col lg:flex-row">
+                <!-- Left content -->
+                <div class="p-6 md:p-10 lg:w-2/3">
+                  <div class="flex items-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                      Welcome to EDUQUEST!
+                    </h2>
+                  </div>
+                  
+                  <p class="text-lg md:text-xl text-gray-700 mb-6 italic border-l-4 border-primary pl-4" id="random-quote">
+                    "Education is the passport to the future, for tomorrow belongs to those who prepare for it today."
+                  </p>
+                  
+                  <div class="bg-secondary-light p-6 rounded-lg shadow-sm mb-8 border border-primary-light">
+                    <div class="flex items-center mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                      <h3 class="text-xl font-semibold text-gray-800">Why Join EDUQUEST?</h3>
+                    </div>
+                    
+                    <ul class="space-y-4">
+                      <li class="flex items-start">
+                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white text-sm mr-3 flex-shrink-0">
+                          ✓
+                        </span>
+                        <span class="text-gray-700">Specialized JAMB & Post-UTME preparation materials.</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white text-sm mr-3 flex-shrink-0">
+                          ✓
+                        </span>
+                        <span class="text-gray-700">Interactive practice tests with real-time feedback.</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white text-sm mr-3 flex-shrink-0">
+                          ✓
+                        </span>
+                        <span class="text-gray-700">Get personalized learning paths based on your performance.</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white text-sm mr-3 flex-shrink-0">
+                          ✓
+                        </span>
+                        <span class="text-gray-700">Access to EDUQUESTbot AI assistant for 24/7 help.</span>
+                      </li>
+                      <li class="flex items-start">
+                        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white text-sm mr-3 flex-shrink-0">
+                          ✓
+                        </span>
+                        <span class="text-gray-700">Find nearby exam centers and registration information.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-accent-light p-6 rounded-lg mb-8 border border-primary-light">
+                    <div class="flex items-center mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9v4.5a.5.5 0 0 0 .5.5H13"/><path d="M9 12h3"/></svg>
+                      <h3 class="text-xl font-semibold text-gray-800">Meet EDUQUESTbot</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                      Your personal AI study companion that adapts to your learning style.
+                      EDUQUESTbot provides instant answers, monitors your progress, and suggests 
+                      personalized study plans to help you excel in your exams.
+                    </p>
+                  </div>
+                  
+                  <div class="flex justify-center md:justify-start">
+                    <button 
+                      id="start-learning-btn" 
+                      class="bg-primary hover-bg-primary-dark text-white text-lg px-6 py-3 rounded-md flex items-center"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 12h.01"/><path d="M8 12h.01"/><path d="M12 16h.01"/><path d="M12 8h.01"/></svg>
+                      Start Learning Now
+                    </button>
+                  </div>
+                </div>
+                
+                <!-- Right image -->
+                <div class="lg:w-1/3 bg-white">
+                  <div class="h-full flex items-center justify-center p-6 bg-gradient-to-br from-purple-50 to-white">
+                    <img 
+                      src="/african-students-learning.jpg" 
+                      alt="African students learning with technology" 
+                      class="rounded-lg shadow-md max-h-[500px] object-cover" 
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stats or callout section -->
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="flex justify-center mb-3">
+                  <div class="bg-primary-light p-3 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                  </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2">5,000+ Questions</h3>
+                <p class="text-gray-600">Access our extensive question bank</p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="flex justify-center mb-3">
+                  <div class="bg-primary-light p-3 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.21 13.89 7 23l9-9-8.99-8.99-1.07 1.07 7.73 7.73L8.21 13.89z"/><path d="m7 6.08 8.99 8.99c-3.34.06-6.24-2.46-7.99-5.99"/></svg>
+                  </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2">90% Success Rate</h3>
+                <p class="text-gray-600">Join thousands of successful students</p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="flex justify-center mb-3">
+                  <div class="bg-primary-light p-3 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9v4.5a.5.5 0 0 0 .5.5H13"/><path d="M9 12h3"/></svg>
+                  </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2">24/7 AI Support</h3>
+                <p class="text-gray-600">Get help anytime with EDUQUESTbot</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Auth Forms Section - initially hidden -->
+        <section id="auth-section" class="py-8 px-4 animate-fade-in hidden">
+          <div class="container mx-auto max-w-md">
+            <div class="tabs-container">
+              <div class="tabs-header grid grid-cols-2 mb-4">
+                <button class="tab-trigger active" data-tab="signin">Sign In</button>
+                <button class="tab-trigger" data-tab="signup">Create Account</button>
+              </div>
+              
+              <div class="tab-content active" id="signin-tab">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Sign In</h3>
+                    <p class="card-description">
+                      Access your EDUQUEST account to continue your learning journey.
+                    </p>
+                  </div>
+                  <form id="signin-form">
+                    <div class="card-content space-y-4">
+                      <div class="space-y-2">
+                        <input
+                          type="email"
+                          placeholder="Email or Phone"
+                          class="input-field"
+                          required
+                        />
+                      </div>
+                      <div class="space-y-2">
+                        <input
+                          type="password"
+                          placeholder="Password"
+                          class="input-field"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="card-footer flex-col space-y-4">
+                      <button type="submit" class="btn btn-primary w-full">Sign In</button>
+                      <button type="button" class="btn btn-link w-full">
+                        Forgot Password?
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              
+              <div class="tab-content" id="signup-tab">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Create Account</h3>
+                    <p class="card-description">
+                      Join EDUQUEST and start your exam preparation journey.
+                    </p>
+                  </div>
+                  <form id="signup-form">
+                    <div class="card-content space-y-4">
+                      <div class="space-y-2">
+                        <input
+                          type="email"
+                          placeholder="Email or Phone"
+                          class="input-field"
+                          required
+                        />
+                      </div>
+                      <div class="space-y-2">
+                        <input
+                          type="password"
+                          placeholder="Password"
+                          class="input-field"
+                          required
+                        />
+                      </div>
+                      <div class="space-y-2">
+                        <input
+                          type="password"
+                          placeholder="Confirm Password"
+                          class="input-field"
+                          required
+                        />
+                      </div>
+                      <div class="space-y-2">
+                        <input
+                          type="text"
+                          placeholder="National ID (Optional)"
+                          class="input-field"
+                        />
+                      </div>
+                      <div class="space-y-2">
+                        <input
+                          type="text"
+                          placeholder="Username"
+                          class="input-field"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <button type="submit" class="btn btn-primary w-full">Create Account</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Other sections - all initially hidden -->
+        <section id="profile-section" class="py-8 px-4 animate-fade-in hidden">
+          <!-- Profile setup content will be loaded separately -->
+        </section>
+        
+        <section id="level-section" class="py-8 px-4 animate-fade-in hidden">
+          <!-- Level selection content will be loaded separately -->
+        </section>
+        
+        <section id="subject-section" class="py-8 px-4 animate-fade-in hidden">
+          <!-- Subject selection content will be loaded separately -->
+        </section>
+        
+        <section id="questions-section" class="py-8 px-4 animate-fade-in hidden">
+          <!-- Question display content will be loaded separately -->
+        </section>
+        
+        <section id="dashboard-section" class="py-8 px-4 animate-fade-in hidden">
+          <!-- Dashboard content will be loaded separately -->
+        </section>
+        
+        <section id="chatbot-section" class="py-8 px-4 pb-20 animate-fade-in hidden">
+          <!-- Chatbot content will be loaded separately -->
+        </section>
+        
+        <section id="rewards-section" class="container mx-auto py-16 px-4 text-center hidden">
+          <h2 class="text-3xl font-bold mb-4">Coin Rewards</h2>
+          <p class="text-lg text-gray-600">
+            Earn coins by completing quizzes and challenges!
+          </p>
+        </section>
+        
+        <section id="support-section" class="container mx-auto py-16 px-4 text-center hidden">
+          <h2 class="text-3xl font-bold mb-4">Support</h2>
+          <p class="text-lg text-gray-600">
+            Need help? Our support team is here for you!
+          </p>
+        </section>
+      </main>
+      
+      <!-- Footer - initially hidden -->
+      <footer id="app-footer" class="bg-white border-t fixed bottom-0 left-0 right-0 z-10 hidden">
+        <div class="container mx-auto">
+          <nav class="flex justify-around items-center py-2">
+            <button class="footer-btn flex flex-col items-center gap-1" data-section="dashboard">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span class="text-xs">Home</span>
+            </button>
+            
+            <button class="footer-btn flex flex-col items-center gap-1" data-section="rewards">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.21 13.89 7 23l9-9-8.99-8.99-1.07 1.07 7.73 7.73L8.21 13.89z"/><path d="m7 6.08 8.99 8.99c-3.34.06-6.24-2.46-7.99-5.99"/></svg>
+              <span class="text-xs">Rewards</span>
+            </button>
+            
+            <button 
+              class="primary-btn flex items-center justify-center bg-primary text-white rounded-full w-14 h-14 -mt-5 shadow-md hover-bg-primary-dark"
+              data-section="questions"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9v4.5a.5.5 0 0 0 .5.5H13"/><path d="M9 12h3"/></svg>
+            </button>
+
+            <button class="footer-btn flex flex-col items-center gap-1" data-section="chatbot">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span class="text-xs">EDUQUESTbot</span>
+            </button>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
