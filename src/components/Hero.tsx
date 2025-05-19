@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { GraduationCap, BookOpen, Award, LightbulbIcon, Bot, Calendar, Star, TrendingUp } from 'lucide-react';
+import { GraduationCap, BookOpen, Award, LightbulbIcon, Bot } from 'lucide-react';
 
 interface HeroProps {
   onGetStarted: () => void;
@@ -72,28 +72,6 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
                 </p>
               </div>
               
-              {/* New section: Upcoming Exams */}
-              <div className="bg-primary/10 p-6 rounded-lg mb-8 border border-primary/10">
-                <div className="flex items-center mb-3">
-                  <Calendar className="h-6 w-6 text-primary mr-2" />
-                  <h3 className="text-xl font-semibold text-gray-800">Upcoming Exam Dates</h3>
-                </div>
-                <ul className="space-y-2">
-                  <li className="flex justify-between">
-                    <span className="font-medium">JAMB UTME:</span>
-                    <span>April 25 - May 20, 2025</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="font-medium">WAEC:</span>
-                    <span>May 12 - June 18, 2025</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="font-medium">NECO:</span>
-                    <span>June 28 - August 2, 2025</span>
-                  </li>
-                </ul>
-              </div>
-              
               <div className="flex justify-center md:justify-start">
                 <Button 
                   onClick={onGetStarted} 
@@ -106,43 +84,14 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
               </div>
             </div>
             
-            {/* Right section */}
+            {/* Right image */}
             <div className="lg:w-1/3 bg-white">
-              <div className="h-full flex flex-col items-center justify-center p-6 bg-gradient-to-br from-purple-50 to-white">
+              <div className="h-full flex items-center justify-center p-6 bg-gradient-to-br from-purple-50 to-white">
                 <img 
                   src="/african-students-learning.jpg" 
                   alt="African students learning with technology" 
-                  className="rounded-lg shadow-md max-h-[300px] object-cover mb-6" 
+                  className="rounded-lg shadow-md max-h-[500px] object-cover" 
                 />
-                
-                {/* New section: Success Stories */}
-                <div className="w-full bg-white p-4 rounded-lg shadow-sm border border-primary/10 mb-6">
-                  <div className="flex items-center mb-2">
-                    <Star className="h-5 w-5 text-primary mr-2" />
-                    <h4 className="text-lg font-semibold">Success Stories</h4>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="border-l-2 border-primary pl-3 py-1">
-                      <p className="font-medium">Chioma E.</p>
-                      <p className="text-sm text-gray-600">Scored 315 in JAMB, now studying Medicine at University of Lagos</p>
-                    </div>
-                    <div className="border-l-2 border-primary pl-3 py-1">
-                      <p className="font-medium">Emeka O.</p>
-                      <p className="text-sm text-gray-600">Improved from 240 to 298 in JAMB after using EDUQUEST</p>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* New section: Study Tips */}
-                <div className="w-full bg-accent/30 p-4 rounded-lg border border-primary/10">
-                  <div className="flex items-center mb-2">
-                    <TrendingUp className="h-5 w-5 text-primary mr-2" />
-                    <h4 className="text-lg font-semibold">Daily Study Tip</h4>
-                  </div>
-                  <p className="text-sm italic text-gray-700">
-                    "Break down complex topics into smaller, manageable chunks. Review them frequently using active recall techniques rather than passive reading."
-                  </p>
-                </div>
               </div>
             </div>
           </div>
